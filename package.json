@@ -5,6 +5,7 @@
   "scripts": {
     "start": "nx serve",
     "build": "npx nx run web-prism:build --configuration=production --base-href='https://web-prism.github.io",
+    "deploy": "ngh --dir=dist/web-prism",
     "test": "nx test"
   },
   "private": true,
