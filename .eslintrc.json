@@ -32,7 +32,7 @@
           "error",
           {
             "type": "element",
-            "prefix": "web-prism",
+            "prefix": "wp",
             "style": "kebab-case"
           }
         ]
