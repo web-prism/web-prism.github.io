@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { getAnalytics, provideAnalytics } from '@angular/fire/analytics';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -23,7 +24,7 @@ export const appConfig: ApplicationConfig = {
           strictActionImmutability: true,
           strictStateImmutability: true,
         },
-      }
+      },
     ),
     provideRouterStore(),
     provideStoreDevtools({
@@ -40,6 +41,7 @@ export const appConfig: ApplicationConfig = {
     importProvidersFrom([
       provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
       provideAnalytics(() => getAnalytics()),
+      HttpClientModule,
     ]),
   ],
 };
