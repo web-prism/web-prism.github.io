@@ -16,7 +16,7 @@ $web-prism-ui-primary: mat.define-palette($mat-web-prism-ui);
 $web-prism-ui-accent: mat.define-palette($mat-web-prism-ui, 400, 500, 600);
 $web-prism-ui-warn: mat.define-palette($mat-web-prism-red);
 $custom-typography: mat.define-typography-config(
-  $font-family: ' Arial, sans-serif',
+  $font-family: 'Roboto, sans-serif',
 );
 
 // Create the theme object (a Sass map containing all of the palettes).
