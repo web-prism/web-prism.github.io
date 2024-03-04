@@ -25,7 +25,7 @@ export const appConfig: ApplicationConfig = {
           strictActionImmutability: true,
           strictStateImmutability: true,
         },
-      },
+      }
     ),
     provideRouterStore(),
     provideStoreDevtools({

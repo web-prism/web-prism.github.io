@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  @include custom-scroll(green, vertical);
+}
+
+html,
+body {
+  height: 100%;
+}
