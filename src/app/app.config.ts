@@ -1,13 +1,16 @@
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { getAnalytics, provideAnalytics } from '@angular/fire/analytics';
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideRouter } from '@angular/router';
-import { appRoutes } from './app.routes';
-import { provideStore } from '@ngrx/store';
-import { provideRouterStore, routerReducer } from '@ngrx/router-store';
-import { sessionStorageSyncReducer } from './+state/reducers/web-prism.meta-reducers';
 import { provideEffects } from '@ngrx/effects';
-import { webPrismEffects } from './+state/effects';
+import { provideRouterStore, routerReducer } from '@ngrx/router-store';
+import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
+import { webPrismEffects } from './+state/effects';
 import { webPrismReducers } from './+state/reducers';
+import { sessionStorageSyncReducer } from './+state/reducers/web-prism.meta-reducers';
+import { appRoutes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -34,5 +37,9 @@ export const appConfig: ApplicationConfig = {
       },
     }),
     provideEffects([...webPrismEffects]),
+    importProvidersFrom([
+      provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+      provideAnalytics(() => getAnalytics()),
+    ]),
   ],
 };
