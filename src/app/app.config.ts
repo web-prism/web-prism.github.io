@@ -2,6 +2,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { getAnalytics, provideAnalytics } from '@angular/fire/analytics';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
 import { provideRouterStore, routerReducer } from '@ngrx/router-store';
@@ -43,5 +44,6 @@ export const appConfig: ApplicationConfig = {
       provideAnalytics(() => getAnalytics()),
       HttpClientModule,
     ]),
+    provideAnimationsAsync(),
   ],
 };
