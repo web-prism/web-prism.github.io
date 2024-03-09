@@ -306,8 +306,6 @@ THE SOFTWARE.
 
 firebase/app
 
-firebase/auth
-
 firebase/compat/app
 
 firebase/compat/auth
