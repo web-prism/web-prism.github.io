@@ -1,6 +1,5 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { getAnalytics, provideAnalytics } from '@angular/fire/analytics';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
@@ -41,7 +40,6 @@ export const appConfig: ApplicationConfig = {
     provideEffects([...webPrismEffects]),
     importProvidersFrom([
       provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
-      provideAnalytics(() => getAnalytics()),
       HttpClientModule,
     ]),
     provideAnimationsAsync(),
