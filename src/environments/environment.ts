@@ -14,5 +14,6 @@ export const environment = {
     measurementId: 'G-1G5775G7HJ',
     apiUrl:
       'https://web-prism-4d19e-default-rtdb.europe-west1.firebasedatabase.app',
+    serverUrl: 'https://web-prism.glitch.me/api',
   },
 };

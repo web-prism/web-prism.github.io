@@ -1,6 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideRouter } from '@angular/router';
 import { provideEffects } from '@ngrx/effects';
@@ -43,5 +44,6 @@ export const appConfig: ApplicationConfig = {
       HttpClientModule,
     ]),
     provideAnimationsAsync(),
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig },
   ],
 };
