@@ -6,6 +6,7 @@ import {
   MAT_DATE_FORMATS,
   MAT_DATE_LOCALE,
 } from '@angular/material/core';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { enUS } from 'date-fns/locale';
 
 const DATE_FORMATS = {
@@ -22,7 +23,7 @@ const DATE_FORMATS = {
 
 @NgModule({
   imports: [],
-  exports: [MatButtonModule],
+  exports: [MatButtonModule, MatProgressBarModule],
   providers: [
     {
       provide: MAT_DATE_LOCALE,

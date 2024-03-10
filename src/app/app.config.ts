@@ -1,4 +1,8 @@
-import { HttpClientModule } from '@angular/common/http';
+import {
+  HttpClientModule,
+  provideHttpClient,
+  withInterceptors,
+} from '@angular/common/http';
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
@@ -13,6 +17,7 @@ import { webPrismEffects } from './+state/effects';
 import { webPrismReducers } from './+state/reducers';
 import { sessionStorageSyncReducer } from './+state/reducers/web-prism.meta-reducers';
 import { appRoutes } from './app.routes';
+import { loaderInterceptor } from './interceptors/loader.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -45,5 +50,6 @@ export const appConfig: ApplicationConfig = {
     ]),
     provideAnimationsAsync(),
     { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig },
+    provideHttpClient(withInterceptors([loaderInterceptor])),
   ],
 };

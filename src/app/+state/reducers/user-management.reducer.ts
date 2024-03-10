@@ -1,11 +1,11 @@
-import { createReducer, on } from '@ngrx/store';
+import { createReducer } from '@ngrx/store';
 
 export interface UserManagementState {
   something: string;
 }
 
-export const userManagementState: UserManagementState = {
+export const initialState: UserManagementState = {
   something: 'test',
 };
 
-export const userManagementReducer = createReducer(userManagementState);
+export const userManagementReducer = createReducer(initialState);

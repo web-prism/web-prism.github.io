@@ -1,11 +1,17 @@
-<div>
-  <a routerLink="/login">Login</a>
-</div>
-<div>
-  <a routerLink="/home">Home</a>
-</div>
-<div>
-  <a routerLink="/user-management">User management</a>
-</div>
+<div class="relative">
+  @if (isLoaderShown$ | async) {
+  <div class="absolute w-screen h-screen top-0 left-0 z-[9999]">
+    <mat-progress-bar mode="indeterminate" color="primary"></mat-progress-bar>
+  </div>
+  }
 
-<router-outlet></router-outlet>
+  <div>
+    <a routerLink="/home">Home</a>
+  </div>
+  <div>
+    <a routerLink="/user-management">User management</a>
+  </div>
+
+
+  <router-outlet></router-outlet>
+</div>
