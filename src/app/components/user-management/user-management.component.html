@@ -1,5 +1,9 @@
-@defer { @if (getUsers$|async; as users) { @for (user of users; track $index) {
-<div>
-  {{ user.email }}
-</div>
-} } }
+@defer {
+  @if (getUsers$ | async; as users) {
+    @for (user of users; track $index) {
+      <div>
+        {{ user.email }}
+      </div>
+    }
+  }
+}

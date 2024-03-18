@@ -1,8 +1,8 @@
 <nav>
   @for (url of sideNavUrls; track $index) {
-  <a [routerLink]="url.url" class="block">
-    <mat-icon>{{ url.icon }}</mat-icon>
-    <span>{{ url.tabName }}</span>
-  </a>
+    <a [routerLink]="url.url" class="block">
+      <mat-icon>{{ url.icon }}</mat-icon>
+      <span>{{ url.tabName }}</span>
+    </a>
   }
 </nav>
