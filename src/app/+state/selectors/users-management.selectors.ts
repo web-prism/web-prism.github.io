@@ -1,10 +1,10 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { WebPrismStateSlices } from 'src/app/types/enums/web-prism-state-slices';
-import { UserManagementState } from '../reducers/user-management.reducer';
+import { UsersManagementState } from '../reducers/users-management.reducer';
 
 export const selectUserManagementState =
-  createFeatureSelector<UserManagementState>(
-    WebPrismStateSlices.UserManagement
+  createFeatureSelector<UsersManagementState>(
+    WebPrismStateSlices.UsersManagement
   );
 
 export const selectUsers = createSelector(

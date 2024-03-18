@@ -1,4 +1,4 @@
 export enum WebPrismStateSlices {
-  UserManagement = 'user-management',
+  UsersManagement = 'users-management',
   Misc = 'misc',
 }

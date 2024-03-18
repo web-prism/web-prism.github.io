@@ -1,4 +1,4 @@
 import { MiscEffects } from './misc.effects';
-import { UserManagementEffects } from './user-management.effects';
+import { UsersManagementEffects } from './users-management.effects';
 
-export const webPrismEffects = [UserManagementEffects, MiscEffects];
+export const webPrismEffects = [UsersManagementEffects, MiscEffects];

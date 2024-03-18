@@ -1,24 +1,24 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { catchError, map, mergeMap, of } from 'rxjs';
-import { UserManagementService } from 'src/app/services/user-management.service';
+import { UsersManagementService } from 'src/app/services/users-management.service';
 import {
   UserManagementApiActions,
   UserManagementPageActions,
 } from '../actions';
 
 @Injectable()
-export class UserManagementEffects {
+export class UsersManagementEffects {
   constructor(
     private actions$: Actions,
-    private userManagementService: UserManagementService
+    private usersManagementService: UsersManagementService
   ) {}
 
   getUsers$ = createEffect(() => {
     return this.actions$.pipe(
       ofType(UserManagementPageActions.getUsers),
       mergeMap(() =>
-        this.userManagementService.getUsers().pipe(
+        this.usersManagementService.getUsers().pipe(
           map((users) => {
             return UserManagementApiActions.getUsersSuccess({
               users,

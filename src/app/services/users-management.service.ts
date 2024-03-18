@@ -6,7 +6,7 @@ import { User } from '../types/models/user';
 @Injectable({
   providedIn: 'root',
 })
-export class UserManagementService {
+export class UsersManagementService {
   apiUrlGlitch = environment.firebaseConfig.apiUrlGlitch;
 
   constructor(private http: HttpClient) {}

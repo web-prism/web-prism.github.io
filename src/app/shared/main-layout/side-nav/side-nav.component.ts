@@ -19,9 +19,9 @@ export class SideNavComponent {
       url: '/home',
     },
     {
-      tabName: 'User management',
+      tabName: 'Users management',
       icon: 'people',
-      url: '/user-management',
+      url: '/users-management',
     },
   ];
 }
