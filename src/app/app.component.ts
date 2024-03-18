@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { RouterOutlet } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { selectIsLoaderShown } from './+state/selectors/misc.selectors';
@@ -8,7 +8,7 @@ import { AngularMaterialModule } from './angular-material/angular-material.modul
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet, AngularMaterialModule],
+  imports: [CommonModule, RouterOutlet, AngularMaterialModule],
   selector: 'wp-root',
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',

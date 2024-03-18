@@ -10,7 +10,6 @@ import { MiscPageActions } from '../+state/actions';
 })
 export class AuthService {
   apiUrl = environment.firebaseConfig.apiUrl;
-  serverUrl = environment.firebaseConfig.serverUrl;
 
   constructor(
     private router: Router,

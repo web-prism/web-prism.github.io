@@ -1,4 +1,13 @@
-<p>main-layout works!</p>
-<router-outlet></router-outlet>
+<div class="fixed top-0 left-0 w-full h-12">
+  <wp-header></wp-header>
+</div>
 
-<button mat-button color="primary" (click)="signOut()">logout</button>
+<mat-drawer-container autosize class="mt-12">
+  <mat-drawer mode="side" opened>
+    <wp-side-nav></wp-side-nav>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

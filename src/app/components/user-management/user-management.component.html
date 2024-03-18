@@ -1,3 +1,5 @@
-@defer {
-<p>user-management works!</p>
-}
+@defer { @if (getUsers$|async; as users) { @for (user of users; track $index) {
+<div>
+  {{ user.email }}
+</div>
+} } }
